@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+  api:
+    container_name: api
+    build:
+      dockerfile: docker/build/Dockerfile
+    image: php8.2:master
+    ports:
+      - published: 80
+        target: 80
+    volumes:
+        - "./:/var/www/html/"
+        - "./docker/build/config/hosts/:/etc/apache2/sites-enabled/"
