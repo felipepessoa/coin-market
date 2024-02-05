@@ -42,7 +42,7 @@ return [
     |
     */
 
-    'debug' => (bool) env('APP_DEBUG', false),
+    'debug' => (bool)env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -184,5 +184,29 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
+
+    /*
+    |--------------------------------------------------------------------------
+    | CoinGecko Configuration
+    |--------------------------------------------------------------------------
+    |
+    | This array holds the configuration for the CoinGecko API. It includes the
+    | base URL for the API and the API key. These values are retrieved from
+    | environment variables. If these environment variables are not set,
+    | default values are used.
+    |
+    | 'api_url' is the base URL for the CoinGecko API. It defaults to
+    | 'https://api.coingecko.com/api/v3/' if the COINGECKO_API_URL environment
+    | variable is not set.
+    |
+    | 'api_key' is the API key for the CoinGecko API. It defaults to an empty
+    | string if the COINGECKO_API_KEY environment variable is not set.
+    |
+    */
+
+    'coin_gecko' => [
+        'api_url' => env('COINGECKO_API_URL', 'https://api.coingecko.com/api/v3/'),
+        'api_key' => env('COINGECKO_API_API', ''),
+    ],
 
 ];
