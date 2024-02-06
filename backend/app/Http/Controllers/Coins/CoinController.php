@@ -10,11 +10,12 @@ use Illuminate\Http\JsonResponse;
 
 class CoinController extends Controller
 {
-    protected CoinService $coinService;
 
-    public function __construct(CoinService $coinService)
-    {
-        $this->coinService = $coinService;
+
+    public function __construct(
+        protected CoinService $coinService
+    ){
+
     }
 
     public function index(CoinRequest $request)
